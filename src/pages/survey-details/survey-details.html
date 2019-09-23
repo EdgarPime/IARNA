@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-    <ion-navbar color="primary">
+    <ion-navbar color="new">
         <ion-title>Survey Details</ion-title>
     </ion-navbar>
 
@@ -14,14 +14,14 @@
 
 
 <ion-content padding>
-	<ion-fab top right edge>
+	<ion-fab top right >
         <button ion-fab mini (click)="getSurveyResults()" color="danger"><ion-icon name="list-box"></ion-icon></button>
     </ion-fab>
     <survey [survey]="survey"></survey>
 </ion-content>
 
 <ion-footer>
-    <ion-toolbar color="primary">
+    <ion-toolbar color="new">
         <ion-title>© {{ currentYear }} IARNA URL</ion-title>
         <ion-buttons end>
            

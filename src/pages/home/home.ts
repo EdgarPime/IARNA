@@ -10,6 +10,7 @@ import { ApiWrapper } from '../../providers/survey/api-wrapper';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 
+
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
@@ -53,7 +54,7 @@ export class HomePage {
                 // console.log(data);
                 this.surveys = SurveyModel.fromJSONArray(data[0]);
                 // console.log(this.surveys);
-                this.archiveSurveys = SurveyModel.fromJSONArray(data[1]);
+                //this.archiveSurveys = SurveyModel.fromJSONArray(data[1]);
                 loading.dismiss();
             },
             error => {
@@ -86,19 +87,19 @@ export class HomePage {
         );
     }
 
-    getArchiveSurveys() {
-        this.surveyProvider.getArchiveSurveys()
-            .subscribe(
-                data => {
-                    //console.log(data);
-                    this.archiveSurveys = SurveyModel.fromJSONArray(data);
-                },
-                error => {
-                    console.log(<any>error);
-                    if ((error.message == "Failed to get surveys.") || (error.message == "Http failure response for (unknown url): 0 Unknown Error")) this.noSurveys = true;
-            }
-        );
-    }
+    // getArchiveSurveys() {
+    //     this.surveyProvider.getArchiveSurveys()
+    //         .subscribe(
+    //             data => {
+    //                 //console.log(data);
+    //                 this.archiveSurveys = SurveyModel.fromJSONArray(data);
+    //             },
+    //             error => {
+    //                 console.log(<any>error);
+    //                 if ((error.message == "Failed to get surveys.") || (error.message == "Http failure response for (unknown url): 0 Unknown Error")) this.noSurveys = true;
+    //         }
+    //     );
+    // }
 
     selectedSurvey(survey) {
         //console.log(survey);
@@ -126,7 +127,7 @@ export class HomePage {
               handler: () => {
                 if (operation == 'delete') this.deleteSurvey(survey);
                 if (operation == 'activate') this.activateSurvey(survey);
-                if (operation == 'archive') this.archiveSurvey(survey);
+                //if (operation == 'archive') this.archiveSurvey(survey);
                 if (operation == "create") this.createSurvey("New Survey :)");
               }
             }
@@ -137,12 +138,12 @@ export class HomePage {
 
     showPrompt(survey, slidingItem: ItemSliding) {
         let prompt = this.alertCtrl.create({
-          title: 'Update Survey Name',
-          message: "Enter a name for this survey",
+          title: 'Update Survey Access Key',
+          message: "Enter the new access key",
           inputs: [
             {
               name: 'name',
-              placeholder: 'Name'
+              //placeholder: 'Name'
             },
           ],
           buttons: [
@@ -157,7 +158,7 @@ export class HomePage {
               handler: data => {
                 //console.log('Accept clicked');
                 //console.log(data);
-                this.changeSurveyName(survey, data.name, slidingItem);
+                //this.changeSurveyName(survey, data.name, slidingItem);
               }
             }
           ]
@@ -205,7 +206,7 @@ export class HomePage {
                 console.log(<any>error);
                 if (error.status == 200) {
                     if ( survey.IsArchived === false) this.surveys = this.removeElement(survey.Id, this.surveys);
-                    else this.archiveSurveys = this.removeElement(survey.Id, this.archiveSurveys);
+                    //else this.archiveSurveys = this.removeElement(survey.Id, this.archiveSurveys);
                 }
                 loading.dismiss();
             }
@@ -261,29 +262,29 @@ export class HomePage {
         );
     }
 
-    archiveSurvey(survey) {
-        let loading = this.loadingCtrl.create({
-            content: "Archiving Survey..."
-        });
+    // archiveSurvey(survey) {
+    //     let loading = this.loadingCtrl.create({
+    //         content: "Archiving Survey..."
+    //     });
 
-        loading.present();
+    //     loading.present();
 
-        this.surveyProvider.archiveSurvey(survey.Id)
-        .subscribe(
-            data => {
-                console.log(data);
-                loading.dismiss();
-            },
-            error => {
-                console.log(<any>error);
-                if (error.status == 200) {
-                    this.archiveSurveys.push(survey);
-                    this.surveys = this.removeElement(survey.Id, this.surveys);
-                }
-                loading.dismiss();
-            }
-        );
-    }
+    //     this.surveyProvider.archiveSurvey(survey.Id)
+    //     .subscribe(
+    //         data => {
+    //             console.log(data);
+    //             loading.dismiss();
+    //         },
+    //         error => {
+    //             console.log(<any>error);
+    //             if (error.status == 200) {
+    //                 this.archiveSurveys.push(survey);
+    //                 this.surveys = this.removeElement(survey.Id, this.surveys);
+    //             }
+    //             loading.dismiss();
+    //         }
+    //     );
+    // }
 
     removeElement(surveyId, surveys) {
         return surveys.filter(function(e) {
@@ -301,5 +302,7 @@ export class HomePage {
         }
         return options[operation];
     }
+
+   
 
 }

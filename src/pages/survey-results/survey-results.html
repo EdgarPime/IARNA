@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="new">
     <ion-title>Survey Results</ion-title>
   </ion-navbar>
 
@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-	<ion-fab top right edge *ngIf="surveyResults?.length > 0">
+	<ion-fab top right  *ngIf="surveyResults?.length > 0">
     <button ion-fab mini color="danger"><ion-icon name="arrow-dropdown"></ion-icon></button>
     <ion-fab-list>
 			<button ion-fab color="danger" (click)="openModal()"><ion-icon name="stats"></ion-icon></button>
@@ -57,7 +57,7 @@
 </ion-content>
 
 <ion-footer>
-    <ion-toolbar color="primary">
+    <ion-toolbar color="new">
 				<ion-title>© {{ currentYear }} IARNA URL</ion-title>
         <ion-buttons end>
 						
