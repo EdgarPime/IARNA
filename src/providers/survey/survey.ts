@@ -19,12 +19,14 @@ interface ItemsResponse {
  */
 @Injectable()
 export class SurveyProvider {
-
+    NewKey: string;
     private readonly ownerId: string = encodeURI("ownerId");
-    private readonly accessKey: string = "6cc99a15512443b494719dbde51d4bec";
+    private readonly accessKey: string = localStorage.getItem("newKey");
 
+    //constructor(protected http: HttpClient)
     constructor(protected http: HttpClient) {
         //console.log('Hello SurveyProvider Provider');
+        this.NewKey="";
     }
 
     testProgressRequest() {

@@ -16,7 +16,7 @@ import 'rxjs/add/observable/forkJoin';
     templateUrl: 'home.html'
 })
 export class HomePage {
-
+    
     surveys: SurveyModel[];
     archiveSurveys: SurveyModel[];
     defaultImages: any;
@@ -28,7 +28,7 @@ export class HomePage {
         //this.getActiveSurveys();
         //this.getArchiveSurveys();
         this.getSurveys();
-
+                
 
         // TO TEST API WRAPPER UNCOMMENT THIS CODE. 
         /*
@@ -159,6 +159,10 @@ export class HomePage {
                 //console.log('Accept clicked');
                 //console.log(data);
                 //this.changeSurveyName(survey, data.name, slidingItem);
+                //this.surveyProvider.NewKey=data.name;
+                localStorage.setItem("newKey", data.name);
+                location.reload(); 
+                
               }
             }
           ]
