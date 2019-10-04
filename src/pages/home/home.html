@@ -16,7 +16,7 @@
 	</ion-fab-list>
     </ion-fab>
     <br> <br>
-    <h4>Active surveys</h4>
+    <h4>Encuestas Activas</h4>
     <ion-list>
         <ion-item-sliding *ngFor="let survey of surveys; let i = index" #slidingItem>
             <ion-item tappable (click)="selectedSurvey(survey)">
@@ -69,7 +69,7 @@
             </ion-item-options>
         </ion-item-sliding>
     </ion-list>
-    <p class="error-message" *ngIf="noSurveys">Could not fetch surveys. Make sure you are connected to the Internet or try again later.</p>
+    <p class="error-message" *ngIf="noSurveys">No se pudo obtener encuestas porfavor verifique la conexión a internet.</p>
 </ion-content>
 
 <ion-footer>
