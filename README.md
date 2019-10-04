@@ -4,7 +4,11 @@ Aplicacion movil de encuestas utilizando surveyJS
 
 Links para los tutoriales
 
+Video de instalacion en la PC de la aplicacion 
 https://drive.google.com/file/d/1RvZPeX9F6Ef9-dyX_CQptf4WqLAQ1nSi/view?usp=sharing
+
+Video para generar el apk
+https://drive.google.com/file/d/1h1ePca3NKt8GrVZggdXBLpEFaiGE22J9/view
 
 
 Funcionamiento de la aplicacion WEB de Survey
