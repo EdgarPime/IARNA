@@ -41,8 +41,8 @@ En el menu donde salen todas las encuestas al hacer click results se mostraran l
 
 Funcionamiento de la aplicacion MOVIL de Survey
 
-Lo primero sera obtener el access key para tener acceso a todas las encuestas de la aplicacion para ello sera necesario ingresar al link y loggearse:
-Nos loggeamos utilizando el siguiente link
+Lo primero sera obtener el access key para tener acceso a todas las encuestas de la aplicacion para ello sera necesario ingresar al link y loguearse:
+Nos logueamos utilizando el siguiente link
 https://surveyjs.io/Account/Login/
 Luego ingresamos al siguiente link obtener el access key
 https://surveyjs.io/Help/Api/GET-api-MySurveys-deleteAllResults-id_accessKey
