@@ -46,7 +46,7 @@ export class HomePage {
 
     getSurveys() {
         let loading = this.loadingCtrl.create({
-            content: "Loading Surveys..."
+            content: "Cargando encuestas..."
         });
         loading.present();
         Observable.forkJoin(this.surveyProvider.getActiveSurveys(), this.surveyProvider.getArchiveSurveys())
@@ -66,7 +66,7 @@ export class HomePage {
 
     getActiveSurveys() {
         let loading = this.loadingCtrl.create({
-            content: "Loading Surveys..."
+            content: "Cargando encuestas..."
         });
 
         loading.present();
@@ -138,8 +138,8 @@ export class HomePage {
 
     showPrompt(survey, slidingItem: ItemSliding) {
         let prompt = this.alertCtrl.create({
-          title: 'Update Survey Access Key',
-          message: "Enter the new access key",
+          title: 'Actualizar clave de acceso para cargar encuestas',
+          message: "Ingrese la nueva clave de acceso",
           inputs: [
             {
               name: 'name',
@@ -148,13 +148,13 @@ export class HomePage {
           ],
           buttons: [
             {
-              text: 'Cancel',
+              text: 'Cancelar',
               handler: data => {
                 //console.log('Cancel clicked');
               }
             },
             {
-              text: 'Accept',
+              text: 'Aceptar',
               handler: data => {
                 //console.log('Accept clicked');
                 //console.log(data);

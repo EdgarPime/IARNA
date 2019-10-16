@@ -35,7 +35,7 @@ export class SurveyResultsPage {
 		this.survey.publicSurveyURL = 'https://surveyjs.io/Results/Survey/' + this.survey.Id;
 
 		let loading = this.loadingCtrl.create({
-            content: "Loading Survey results..."
+            content: "Cargando resultados de la encuesta...  "
         });
 
 		loading.present();
