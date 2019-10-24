@@ -170,6 +170,22 @@ export class HomePage {
         prompt.present();
     }
 
+    showPrompt1(survey, slidingItem: ItemSliding) {
+        let prompt = this.alertCtrl.create({
+          title: '<div align="center"> Creditos </div>' ,
+          message: "<b> Edgar Pimentel </b> <br>" + "<b> Jose del Pozo </b> <br>" + "<b> Alberto Estrada </b> <br>" + "<b> Luis Pedro Gonzalez </b> <br>" + "<b> Oscar Gomez </b> <br>" + "<b> Miguel Rojas </b> <br>",
+          
+          buttons: [
+            
+            {
+              text: 'Aceptar',
+              
+            }
+          ]
+        });
+        prompt.present();
+    }
+
     createSurvey(name) {
         let loading = this.loadingCtrl.create({
             content: "Creating Survey..."
